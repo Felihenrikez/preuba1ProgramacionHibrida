@@ -5,9 +5,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+
+    <ion-select [(ngModel)]="seleccion" label="Elige una figura geometrica" placeholder="Figure Type">
+      <ion-select-option value="Circulo">Circulo</ion-select-option>
+      
+      <ion-select-option value="Cuadrado">Cuadrado</ion-select-option>
+    </ion-select>
+
+    <app-formulario-circulo *ngIf="seleccion=='Circulo'"/>
+  
 </ion-content>
