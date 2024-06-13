@@ -6,12 +6,13 @@
 
 <ion-content [fullscreen]="true">
 
-    <ion-select [(ngModel)]="seleccion" label="Elige una figura geometrica" placeholder="Figure Type">
-      <ion-select-option value="Circulo">Circulo</ion-select-option>
-      
-      <ion-select-option value="Cuadrado">Cuadrado</ion-select-option>
-    </ion-select>
+ 
 
-    <app-formulario-circulo *ngIf="seleccion=='Circulo'"/>
-  
+  <ion-select [(ngModel)]="seleccion" aria-label="figura" placeholder="Selecciona una figura">
+    <ion-select-option value="circulo">circulo</ion-select-option>
+    <ion-select-option value="triangulo">triangulo</ion-select-option>
+  </ion-select>
+  <app-formulario-circulo  />
+
+
 </ion-content>
