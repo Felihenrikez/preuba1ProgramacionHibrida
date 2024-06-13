@@ -12,9 +12,9 @@
     <ion-select-option value="circulo">circulo</ion-select-option>
     <ion-select-option value="triangulo">triangulo</ion-select-option>
   </ion-select>
-  <app-formulario-circulo  />
-  <app-formulario-triangulo/>
-  
+  <app-formulario-circulo *ngIf="seleccion=='circulo'"  />
+  <app-formulario-triangulo *ngIf="seleccion=='triangulo'" />
+
 
 
 </ion-content>

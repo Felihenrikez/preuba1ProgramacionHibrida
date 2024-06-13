@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { IonItem,IonInput,IonLabel,IonImg,IonButton, IonText } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { Circulo } from 'src/app/modelo/clases';
@@ -9,12 +10,12 @@ import { Circulo } from 'src/app/modelo/clases';
   templateUrl: './formulario-circulo.component.html',
   styleUrls: ['./formulario-circulo.component.scss'],
   standalone: true,
-  imports:[IonItem,IonInput,IonLabel,IonImg,IonButton,IonText,FormsModule]
+  imports:[IonItem,IonInput,IonLabel,IonImg,IonButton,IonText,FormsModule,CommonModule]
 })
 export class FormularioCirculoComponent  implements OnInit {
   txtRadio=""
   perimetro:number|null=null;
-  txtMensaje="holo";
+  txtMensaje=" ";
   circulo:Circulo|null=null;
 
   constructor() { }

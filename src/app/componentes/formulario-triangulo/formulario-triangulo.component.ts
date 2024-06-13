@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { IonItem,IonInput,IonLabel,IonImg,IonButton, IonText } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { TrianguloEquilatero,TrianguloEscaleno } from 'src/app/modelo/clases';
@@ -9,7 +10,7 @@ import { Parser } from '@angular/compiler';
   templateUrl: './formulario-triangulo.component.html',
   styleUrls: ['./formulario-triangulo.component.scss'],
   standalone: true,
-  imports:[IonItem,IonInput,IonLabel,IonImg,IonButton,IonText,FormsModule]
+  imports:[IonItem,IonInput,IonLabel,IonImg,IonButton,IonText,FormsModule,CommonModule]
 })
 export class FormularioTrianguloComponent  implements OnInit {
   txtLadoA="";
@@ -17,7 +18,7 @@ export class FormularioTrianguloComponent  implements OnInit {
   txtLadoC="";
   perimetro:number|null=null;
   triangulo:TrianguloEquilatero|TrianguloEscaleno|null=null;
-  txtMensaje="holo";
+  txtMensaje=" ";
 
   constructor() { }
 
