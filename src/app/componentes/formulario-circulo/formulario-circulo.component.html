@@ -10,11 +10,11 @@
   <ion-img src="assets\image\circulo.png" alt="Descripción de la imagen"></ion-img>
 </ion-item>
 <ion-item>
-  <ion-input  label="radio (cm)" type="number" labelPlacement="stacked" placeholder="ingresa al radio "></ion-input>
+  <ion-input [(ngModel)]="txtRadio" label="radio (cm)" type="number" labelPlacement="stacked" placeholder="ingresa al radio "></ion-input>
 </ion-item>
 <ion-item>
   <ion-button (click)="CalcularPerimetro()" size="default">Calcular perimetro</ion-button>
 </ion-item>
 <ion-item>
-  <p>El perimetro del circulo es </p>
+  <ion-text *ngIf ="txtMensaje">sopas {{txtMensaje}}</ion-text>
 </ion-item>

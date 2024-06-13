@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
-import { IonItem,IonInput,IonLabel,IonImg,IonButton } from '@ionic/angular/standalone';
-import { circulo } from 'src/app/modelo/clases';
+import { IonItem,IonInput,IonLabel,IonImg,IonButton, IonText } from '@ionic/angular/standalone';
+import { FormsModule } from '@angular/forms';
+import { Circulo } from 'src/app/modelo/clases';
 
 
 @Component({
@@ -8,18 +9,27 @@ import { circulo } from 'src/app/modelo/clases';
   templateUrl: './formulario-circulo.component.html',
   styleUrls: ['./formulario-circulo.component.scss'],
   standalone: true,
-  imports:[IonItem,IonInput,IonLabel,IonImg,IonButton]
+  imports:[IonItem,IonInput,IonLabel,IonImg,IonButton,IonText,FormsModule]
 })
 export class FormularioCirculoComponent  implements OnInit {
-  txtradio=""
-  perimetro=0
-  circulo =new circulo("circulo",0)
-  txtMensaje=" "
+  txtRadio=""
+  perimetro:number|null=null;
+  txtMensaje="holo";
+  circulo:Circulo|null=null;
 
   constructor() { }
+
 CalcularPerimetro(){
-  this.circulo.radio=parseInt(this.txtradio)
-  this.perimetro=this.circulo.calcularPerimetro()
+  const radio = parseFloat(this.txtRadio);
+  if(!isNaN(radio)&& radio>0){
+    this.circulo = new Circulo("circulo",radio);
+    this.perimetro=this.circulo.calcularPerimetro()
+    this.txtMensaje=`El perimetro del circulo es ${this.perimetro.toFixed(2)} cm.`;
+  } else{
+    this.perimetro=null;
+    this.txtMensaje=`Ingresa un radio valido.`;
+  }
+  
 }
 
   ngOnInit() {}

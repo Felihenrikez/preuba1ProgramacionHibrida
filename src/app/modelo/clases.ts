@@ -1,27 +1,20 @@
-export abstract class figuraGeometrica {
+export abstract class FiguraGeometrica {
     constructor(nombre:string){}
     abstract calcularPerimetro():number
 }
-export class circulo extends figuraGeometrica{
+export class Circulo extends FiguraGeometrica{
     radio:number
     constructor(nombre:string,radio:number){
         super(nombre)
         this.radio=radio
-
-
     }
 
    override calcularPerimetro():number{
-    let perimetro :number
-        let piNumber : number= Math.PI
-        perimetro= 2*this.radio*piNumber
-        return perimetro
-    
-
+    return Math.PI*this.radio
     }
 }
 
-export class trianguloEscaleno extends figuraGeometrica{
+export class TrianguloEscaleno extends FiguraGeometrica{
     ladoA:number
     ladoB:number
     ladoC:number
@@ -32,21 +25,13 @@ export class trianguloEscaleno extends figuraGeometrica{
         this.ladoC=ladoC
     }
 
-    override calcularPerimetro(): number {
-        let perimetro:number
-        perimetro= this.ladoA+this.ladoB+this.ladoC
-        return perimetro
+    override calcularPerimetro(): number {        
+        return  this.ladoA+this.ladoB+this.ladoC
     }
-
 }
 
-export class trianguloEquilatero extends trianguloEscaleno{
-    constructor(nombre:string,ladoA:number,ladoB:number,ladoC:number){
-        super(nombre,ladoA,ladoB,ladoC)
-    }
-    override calcularPerimetro(): number {
-        let perimetro
-        perimetro = this.ladoA*3
-        return perimetro
-    }
+export class TrianguloEquilatero extends TrianguloEscaleno{
+    constructor(nombre:string,ladoA:number){
+        super(nombre,ladoA,ladoA,ladoA)
+    }        
 }

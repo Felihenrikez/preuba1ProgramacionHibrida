@@ -1,3 +1,25 @@
-<p>
-  formulario-triangulo works!
-</p>
+<ion-item>
+  <ion-label>
+    <h1>Triangulo</h1>
+    <h2>Perimetro</h2>
+    <p>El perimetro del triangulo es la longitud de sus tres lados, en otras palabras es la medida total del contorno o borde del triangulo</p>
+  </ion-label>
+</ion-item>
+<ion-item>
+  <ion-img src="assets\image\triangulo.png" alt="Descripción de la imagen"></ion-img>
+</ion-item>
+<ion-item>
+  <ion-input [(ngModel)]="txtLadoA" label="lado A (cm)" type="number" labelPlacement="stacked" placeholder="ingresa al lado A "></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input [(ngModel)]="txtLadoB" label="lado B (cm)" type="number" labelPlacement="stacked" placeholder="ingresa el lado B "></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input [(ngModel)]="txtLadoC" label="lado C (cm)" type="number" labelPlacement="stacked" placeholder="ingresa el lado C"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-button (click)="CalcularPerimetro()" size="default">Calcular perimetro</ion-button>
+</ion-item>
+<ion-item>
+  <ion-text *ngIf ="txtMensaje">sopas {{txtMensaje}}</ion-text>
+</ion-item>
